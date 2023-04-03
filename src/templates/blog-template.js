@@ -97,5 +97,9 @@ export const Head = ({location}) => (
     pagepath={location.pathname}
     pagetitle="ブログ"
     pagedesc="DORAHEIのブログです"
+    // パンくずリスト用にページの深さを設定する。homeが1 aboutは2 BlogPostが3
+    pagedepth="2"
+    // パンくずリスト用にカテゴリーの名前を渡す
+    pagecontext="Blog"
   />
 )

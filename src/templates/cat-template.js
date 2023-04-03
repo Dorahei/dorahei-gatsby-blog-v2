@@ -105,5 +105,9 @@ export const Head = ({location, pageContext}) => (
     pagetitle={`CATEGORY: ${pageContext.catname}`}
     pagedesc={`「${pageContext.catname}」カテゴリーの記事です`}
     pagepath={location.pathname}
+    // パンくずリスト用にページの深さを設定する。homeが1 aboutは2 BlogPostが3
+    pagedepth="2"
+    // パンくずリスト用にカテゴリーの名前を渡す
+    pagecontext={`${pageContext.catname}`}
   />
 )

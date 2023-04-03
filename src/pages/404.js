@@ -15,5 +15,10 @@ const NotFound = ({ location }) => (
 export default NotFound
 
 export const Head = ({ location }) => (
-  <Seo pagetitle="ページが見つかりません" pagepath={location.pathname} />
+  <Seo 
+  pagetitle="ページが見つかりません" pagepath={location.pathname} 
+  // パンくずリスト用にページの深さを設定する。homeが1 aboutは2 BlogPostが3
+  pagedepth="2"
+  />
+  
 )

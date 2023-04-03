@@ -75,7 +75,7 @@ const About = ({ data, location }) => (
 
 export const query = graphql`
   query {
-    about: file(relativePath: { eq: "bg_natural_sougen.jpg" }) {
+    about: file(relativePath: { eq: "bg_about.jpg" }) {
       childImageSharp {
         gatsbyImageData(layout: FULL_WIDTH)
         original {
@@ -98,5 +98,9 @@ export const Head = ({ location, data }) => (
     pageimg={data.about.childImageSharp.original.src}
     pageimgw={data.about.childImageSharp.original.width}
     pageimgh={data.about.childImageSharp.original.height}
+    // パンくずリスト用にページの深さを設定する。homeが1 aboutは2 BlogPostが3
+    pagedepth="2"
+    // パンくずリスト用にカテゴリーの名前を渡す
+    pagecontext="About"
   />
 )

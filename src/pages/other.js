@@ -102,7 +102,7 @@ const Other = ({ data, location }) => (
 
 export const query = graphql`
   query {
-    other: file(relativePath: { eq: "bg_natural_sougen.jpg" }) {
+    other: file(relativePath: { eq: "bg_other.jpg" }) {
       childImageSharp {
         gatsbyImageData(layout: FULL_WIDTH)
         original {
@@ -125,5 +125,9 @@ export const Head = ({ location, data }) => (
   pageimgw={data.other.childImageSharp.original.width}
   pageimgh={data.other.childImageSharp.original.height}
   pagetitle="その他の情報"
+  // パンくずリスト用にページの深さを設定する。homeが1 aboutは2 BlogPostが3
+  pagedepth="2"
+  // パンくずリスト用にカテゴリーの名前を渡す
+  pagecontext="Other"
   />
 )

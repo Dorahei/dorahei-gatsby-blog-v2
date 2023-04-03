@@ -38,20 +38,146 @@ const pdate = props.pubdate || `2023-01-01T08:00:00+08:00`
 const mdate = props.moddate || `2023-01-02T09:20:00+08:00`
 
 // 構造化データ用(変数使用)
-const ldjson = `{
-    "@context": "http://schema.org",
-    "@type": "BlogPosting",
-    "headline": "${title}",
-    "image": "${imgurl}",
-    "datePublished": "${pdate}",
-    "dateModified": "${mdate}",
-    "author": [{
+// const ldjson = `{
+//     "@context": "http://schema.org",
+//     "@type": "BlogPosting",
+//     "headline": "${title}",
+//     "image": "${imgurl}",
+//     "datePublished": "${pdate}",
+//     "dateModified": "${mdate}",
+//     "author": [{
+//         "@type": "Person",
+//         "name": "DORAHEI",
+//         "url": "https://dorahei.com"
+//     }]
+//   }
+// `
+
+// // 構造化データ パンくずリスト&Article
+// const ldjson = `
+//     {
+//     "@context": "https://schema.org",
+//     "@type": "WebPage",
+//     "breadcrumb": {
+//         "@type": "BreadcrumbList",
+//         "itemListElement": [
+//         {
+//         "@type": "ListItem",
+//         "position": 1,
+//         "name": "Home",
+//         "item": "${data.site.siteMetadata.siteUrl}"
+//         },
+//         {
+//         "@type": "ListItem",
+//         "position": 2,
+//         "name": "Pages",
+//         "item": "${url}"
+//         },
+//         {
+//         "@type": "ListItem",
+//         "position": 3,
+//         "name": "BlogPost",
+//         "item": "${url}"
+//         }
+//       ]
+//     },
+//     "mainEntityOfPage": {
+//         "@type": "BlogPosting",
+//         "headline": "${title}",
+//         "image": "${imgurl}",
+//         "author": {
+//           "@type": "Person",
+//           "name": "DORAHEI",
+//           "url": "${data.site.siteMetadata.siteUrl}"
+//         },
+//         "publisher": {
+//           "@type": "Organization",
+//           "name": "DORAHEI LOOSE LIFE",
+//           "logo": {
+//             "@type": "ImageObject",
+//             "url": "${data.site.siteMetadata.siteUrl}/icons/icon-256x256.png"
+//         },
+//         "datePublished": "${pdate}",
+//         "dateModified": "${mdate}",
+//         "description": "${description}",
+//         "articleBody": "Write a blog summary here!"
+//         }
+//     }
+//   }
+// `
+
+// パンくずリスト1階層目 Home
+const itemListElements =[
+  {
+  "@type": "ListItem",
+  "position": 1,
+  "name": "Home",
+  "item": `${data.site.siteMetadata.siteUrl}`
+  }
+];
+
+// パンくずリスト2階層 Pages(about/other/cat/blog)
+if (props.pagedepth === "2") {
+  itemListElements.push(
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": `${props.pagecontext}`,
+      "item": `${url}`
+    }
+  );
+}
+
+// パンくずリスト3階層 BlogPost
+if (props.pagedepth === "3") {
+  itemListElements.push(
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Pages",
+      "item": `${data.site.siteMetadata.siteUrl}/blog`
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "BlogPost",
+      "item": `${url}`
+    }
+  );
+}
+
+const ldjson = `
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": ${JSON.stringify(itemListElements)}
+    },
+    "mainEntityOfPage": {
+      "@type": "BlogPosting",
+      "headline": "${title}",
+      "image": "${imgurl}",
+      "author": {
         "@type": "Person",
         "name": "DORAHEI",
-        "url": "https://dorahei.com"
-    }]
+        "url": "${data.site.siteMetadata.siteUrl}"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "DORAHEI LOOSE LIFE",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "${data.site.siteMetadata.siteUrl}/icons/icon-256x256.png"
+        }
+      },
+      "datePublished": "${pdate}",
+      "dateModified": "${mdate}",
+      "description": "${description}",
+      "articleBody": "${description}"
+    }
   }
-`
+`;
 
   return (
     <>
