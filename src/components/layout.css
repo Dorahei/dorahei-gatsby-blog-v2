@@ -22,7 +22,7 @@ h6,
 p,
 ul,
 figure {
-  margin: 0;
+  margin: 1.0em;
   padding: 0;
 }
 
@@ -688,4 +688,46 @@ svg {
 
 .table-of-contents a:hover {
   background: linear-gradient(transparent 60%, rgb(120, 255, 102) 40%) /* 縦のグラデーション */
+}
+
+/* 引用部分の装飾 */
+blockquote {
+  position: relative;
+  padding: 10px 12px;
+  box-sizing: border-box;
+  font-style: italic;
+  color: #464646;
+  border-left: solid 50px #479454;
+  background: #dcf5e0;
+}
+
+blockquote:before{
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: -37px;
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  content: "\f10d";
+  font-family: FontAwesome;
+  color: #FFF;
+  font-size: 22px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+blockquote p {
+  position: relative;
+  padding: 0;
+  margin: 10px 0;
+  z-index: 3;
+  line-height: 1.7;
+}
+
+blockquote cite {
+  display: block;
+  text-align: right;
+  color: #888888;
+  font-size: 0.9em;
 }

@@ -17,7 +17,7 @@ const env = process.env
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: `【 ドラヘイの生活 】`,
+    title: `ドラヘイの生活`,
     description: `うつ病の闘病記と社会復帰のブログ`,
     lang: `ja`,
     siteUrl: `https://dorahei.com/`,
@@ -25,7 +25,6 @@ module.exports = {
     fbappid: `XXXXXXXXXXXXXXXXXXXXX`,
   },
   plugins: [
-    //`gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

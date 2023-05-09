@@ -3,7 +3,7 @@ import { graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
-
+// import Layout from "../components/gallery"
 import Seo from "../components/seo"
 
 const Home = ({ data }) => (
@@ -102,7 +102,6 @@ const Home = ({ data }) => (
         />
       </figure>
     </section>
-
     <section>
       <div className="container">
         <h2 className="sr-only">RECENT POSTS</h2>
@@ -123,6 +122,12 @@ const Home = ({ data }) => (
           ))}
         </div>
       </div>
+    </section>
+    <section>
+      {/* <div className="container">
+        <h2 className="sr-only">GALLERY</h2>
+          <MyGallery/>
+      </div> */}
     </section>
   </Layout>
 )
