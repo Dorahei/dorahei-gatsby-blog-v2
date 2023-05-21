@@ -3,12 +3,13 @@ import { graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
-// import Layout from "../components/gallery"
+import MyGallery from "../components/gallery"
 import Seo from "../components/seo"
 
 const Home = ({ data }) => (
   <Layout>
     <Seo />
+    {/* ヒーローセクション */}
     <section className="hero">
       <figure>
         <GatsbyImage
@@ -38,11 +39,10 @@ const Home = ({ data }) => (
         </svg>
       </div>
     </section>
+    {/* ブログについて */}
     <section className="food">
       <div className="container">
-        <h2 className="bar">
-          ブログの内容
-        </h2>
+        <h2 className="bar">ブログの内容</h2>
         <div className="details">
           <div className="detail">
             <figure>
@@ -92,19 +92,20 @@ const Home = ({ data }) => (
         </div>
       </div>
     </section>
+    {/* ブログセクション */}
     <section className="photo">
-      <h2 className="sr-only">Photo</h2>
+      <h2 className="sr-only">BLOG</h2>
       <figure>
         <GatsbyImage
-          image={data.banner.childImageSharp.gatsbyImageData}
+          image={data.blog.childImageSharp.gatsbyImageData}
           alt="banner"
           style={{ height: "100%" }}
         />
       </figure>
     </section>
-    <section>
+    <section className="food">
       <div className="container">
-        <h2 className="sr-only">RECENT POSTS</h2>
+        <h2 className="bar">RECENT POSTS</h2>
         <div className="posts">
           {data.allContentfulBlogPost.edges.map(({ node }) => (
             <article className="post" key={node.id}>
@@ -123,11 +124,22 @@ const Home = ({ data }) => (
         </div>
       </div>
     </section>
-    <section>
-      {/* <div className="container">
-        <h2 className="sr-only">GALLERY</h2>
+    {/* ギャラリーセクション */}
+    <section className="photo">
+      <h2 className="sr-only">Gallery</h2>
+      <figure>
+        <GatsbyImage
+          image={data.gallery.childImageSharp.gatsbyImageData}
+          alt="banner"
+          style={{ height: "100%" }}
+        />
+      </figure>
+    </section>
+    <section className="food">
+      <div className="container">
+        <h2 className="bar">GALLERY</h2>
           <MyGallery/>
-      </div> */}
+      </div>
     </section>
   </Layout>
 )
@@ -141,20 +153,25 @@ export const query = graphql`
     }
     nayamu_boy: file(relativePath: { eq: "nayamu_boy.png" }) {
       childImageSharp {
-        gatsbyImageData(width: 320, layout: CONSTRAINED)
+        gatsbyImageData(height: 320, layout: CONSTRAINED)
       }
     }
     fukusyoku: file(relativePath: { eq: "fukusyoku_nayamu_man.png" }) {
       childImageSharp {
-        gatsbyImageData(width: 320, layout: CONSTRAINED)
+        gatsbyImageData(height: 320, layout: CONSTRAINED)
       }
     }
     sick: file(relativePath: { eq: "sick_syougaisya_techou.png" }) {
       childImageSharp {
-        gatsbyImageData(width: 320, layout: CONSTRAINED)
+        gatsbyImageData(height: 320, layout: CONSTRAINED)
       }
     }
-    banner: file(relativePath: { eq: "banner_green.png" }) {
+    blog: file(relativePath: { eq: "banner_blog.png" }) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
+    }
+    gallery: file(relativePath: { eq: "banner_gallery.png" }) {
       childImageSharp {
         gatsbyImageData(layout: FULL_WIDTH)
       }

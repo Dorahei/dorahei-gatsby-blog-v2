@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+/* Bootstrap から必要なcssだけを使う */
+
+
+.gallery{
+  padding: 0em;
+  margin: 0em;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 992px){
+  .col-lg-4 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+  }
+}

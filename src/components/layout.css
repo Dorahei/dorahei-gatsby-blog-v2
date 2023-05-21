@@ -22,7 +22,8 @@ h6,
 p,
 ul,
 figure {
-  margin: 1.0em;
+  line-height: 1.0em;
+  margin-bottom: 2.0em;
   padding: 0;
 }
 

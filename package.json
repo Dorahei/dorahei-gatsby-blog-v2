@@ -22,6 +22,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@gatsby-cloud-pkg/gatsby-plugin-preview": "^1.0.19",
+    "bootstrap": "^5.2.3",
     "gatsby": "^5.9.1",
     "gatsby-plugin-gatsby-cloud": "^5.9.0",
     "gatsby-plugin-google-adsense": "^1.1.3",
@@ -45,10 +46,13 @@
     "gatsby-source-filesystem": "^5.9.0",
     "gatsby-transformer-remark": "^6.9.0",
     "gatsby-transformer-sharp": "^5.9.0",
+    "process": "^0.11.10",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
-    "react-syntax-highlighter": "^15.5.0"
+    "react-syntax-highlighter": "^15.5.0",
+    "simple-react-lightbox": "^3.6.9-0"
   },
   "keywords": [
     "gatsby"
