@@ -51,6 +51,7 @@
     "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
+    "react-share": "^4.4.1",
     "react-syntax-highlighter": "^15.5.0",
     "simple-react-lightbox": "^3.6.9-0"
   },

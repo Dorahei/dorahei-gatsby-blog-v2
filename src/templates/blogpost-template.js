@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
+import Share from "../components/share"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faClock, faFolderOpen } from "@fortawesome/free-regular-svg-icons"
@@ -86,16 +87,6 @@ function code(text) {
 
 const BlogpostTemp = ({ data, pageContext }) => (
   <Layout>
-    {/* <Seo
-      pagetitle={data.contentfulBlogPost.title}
-      pagedesc={`${documentToPlainTextString(
-        JSON.parse(data.contentfulBlogPost.content.raw)
-      ).slice(0, 70)}…`}
-      pagepath={location.pathname}
-      blogimg={`https:${data.contentfulBlogPost.eyecatch.file.url}`}
-      pageimgw={data.contentfulBlogPost.eyecatch.file.details.image.width}
-      pageimgh={data.contentfulBlogPost.eyecatch.file.details.image.height}
-    /> */}
     <div className="eyecatch">
       <figure>
         <GatsbyImage
@@ -104,6 +95,12 @@ const BlogpostTemp = ({ data, pageContext }) => (
         />
       </figure>
     </div>
+    {/* Shareコンポーネント追加 */}
+    <Share 
+      articleTitle={data.contentfulBlogPost.title}
+      articleUrl={`${data.site.siteMetadata.siteUrl}/blog/post/${data.contentfulBlogPost.slug}/`}
+      />
+    {/* ここからブログ本文 */}
     <article className="content">
       <div className="container">
         <h1 className="bar">{data.contentfulBlogPost.title}</h1>
@@ -159,6 +156,7 @@ export const query = graphql`
   query($id: String!) {
     contentfulBlogPost(id: { eq: $id }) {
       title
+      slug
       publishDateJP: publishDate(formatString: "YYYY年MM月DD日")
       publishDate
       updatedAt
@@ -187,6 +185,11 @@ export const query = graphql`
         childMarkdownRemark {
         html
         }
+      }
+    }
+    site {
+      siteMetadata {
+        siteUrl
       }
     }
   }

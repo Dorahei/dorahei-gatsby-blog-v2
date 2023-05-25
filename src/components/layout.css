@@ -410,7 +410,7 @@ svg {
   padding: 0.4em 0.5em;/*文字の上下 左右の余白*/
   background: #f4f4f4;/*背景色*/
   border-left: solid 10px #479454;/*左線*/
-  /* border-bottom: solid 5px #d7d7d7; */
+  border-radius: 0.5rem;
 }
 .postbody h2 [class*="fa-"] {
   margin-right: 15px;
@@ -424,10 +424,12 @@ svg {
   padding: 0.4em 0.5em;/*文字の上下 左右の余白*/
   background: #f4f4f4;/*背景色*/
   border-left: solid 10px #62dd77;;/*左線*/
+  border-radius: 0.5rem;
 }
 
 .postbody p {
   line-height: 1.8;
+  margin-bottom: 2.0em;
 }
 .postbody ul {
   padding-left: 30px;
@@ -641,16 +643,16 @@ svg {
   padding: 1em;
   margin: 0.5em 0px;
   overflow: auto;
-  border-radius: 0.3em;
+  border-radius: 10px 0px 10px 10px;
 }
+
 .gatsby-code-title {
   display: block;
   position: relative;
   background: #272822;
   width: 100%;
-  top: 10px;
-  border-top-left-radius: 0.3em;
-  border-top-right-radius: 0.3em;
+  top: 16px;
+  border-radius: 10px 10px 0px 0px
 }
 
 .gatsby-code-title span {
@@ -659,10 +661,9 @@ svg {
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   color: #eee;
   background: #777;
-  border-top-left-radius: 0.3em;
-  border-bottom-right-radius: 0.3em;
-  padding: 3px;
-  top: 1px;
+  padding: 5px;
+  top: 7px;
+  border-radius: 10px 0px 0px 0px;
 }
 
 /* 問い合わせ用のフォーム */
@@ -698,8 +699,9 @@ blockquote {
   box-sizing: border-box;
   font-style: italic;
   color: #464646;
-  border-left: solid 50px #479454;
-  background: #dcf5e0;
+  border-left: solid 50px #30b458;
+  border-radius: 0.5em;
+  background: #dcffdc;
 }
 
 blockquote:before{
@@ -731,4 +733,32 @@ blockquote cite {
   text-align: right;
   color: #888888;
   font-size: 0.9em;
+}
+
+/* SHEARメニュー */
+.share {
+  max-width: 785px;
+  margin: 0 auto;
+  background: #dcffdc;
+  border-radius: 1.0em;
+}
+.share p{
+  margin: 0em;
+  border-radius: 0.5em 0.5em 0em 0em;
+}
+
+.share__title {
+  font-size: 40px; 
+  background: #30b458;
+  text-align: center;
+  color: #FFF;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  padding: 1.0rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  padding: 0.5em
 }
