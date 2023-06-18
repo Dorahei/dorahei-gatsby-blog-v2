@@ -2,11 +2,14 @@
 
 [ドラヘイの生活](https://dorahei.com)
 
+## 2023/06/18 GTAGの GTAG_TRACKING_ID 変更
+
+`G-LYEV5KR978` -> `GT-MK48CCL`
+
 ## 2023/05/24 SNSのSHAREボタン追加
 
-`npm install --save react-share  --legacy-peer-deps` -> `npm audit fix` を実行
-
-
+1. `npm install --save react-share  --legacy-peer-deps` -> `npm audit fix` を実行
+2. cssの調整
 ## 2023/05/09 ギャラリーを追加してみる
 
 1. `gatsby-theme-gallery` を追加してみる。-> **失敗**
