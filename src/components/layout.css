@@ -712,7 +712,7 @@ blockquote:before{
   -ms-transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
-  content: "\f10d";
+  /* content: "\f10d"; */
   font-family: FontAwesome;
   color: #FFF;
   font-size: 22px;

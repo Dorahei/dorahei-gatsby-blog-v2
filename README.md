@@ -2,6 +2,14 @@
 
 [ドラヘイの生活](https://dorahei.com)
 
+## アーカイブページ導入検討 : フォルダ内でMarkdownファイルを管理するブログ
+
+**GatsbyStarterBlog** の `content/blog` のフォルダをコピーの検討
+
+## 2023/10/24 layout.cssの調整
+
+引用のアイコンをコメントアウト ` /*content: "\f10d";*/ `
+
 ## 2023/06/18 GTAGの GTAG_TRACKING_ID 変更
 
 `G-LYEV5KR978` -> `GT-MK48CCL`
