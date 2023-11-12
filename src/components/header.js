@@ -50,6 +50,9 @@ const Header = () => (
             <Link to={`/blog/`}>BLOG</Link>
           </li>
           <li>
+            <Link to={`/archive/`}>ARCHIVE</Link>
+          </li>
+          <li>
             <Link to={`/other/`}>OTHER</Link>
           </li>
         </ul>

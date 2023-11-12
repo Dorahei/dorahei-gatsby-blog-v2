@@ -43,9 +43,19 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `archive`,
+        path: `${__dirname}/src/content/archive/`,
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+          },
           {
             resolve: `gatsby-remark-table-of-contents`,
             options: {

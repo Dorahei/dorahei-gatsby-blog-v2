@@ -2,9 +2,12 @@
 
 [ドラヘイの生活](https://dorahei.com)
 
-## アーカイブページ導入検討 : フォルダ内でMarkdownファイルを管理するブログ
+## 2023/11/12 : アーカイブページ導入検討、フォルダ内でMarkdownファイルを管理するブログ
 
-**GatsbyStarterBlog** の `content/blog` のフォルダをコピーの検討
+1. **GatsbyStarterBlog** の `content/blog` のフォルダをコピー
+2. `npm install gatsby-remark-images` をインストール（インライン画像、マークダウン/MDX 本文自体に画像を含めることもできます。）
+3. `archivepost-template.js` と `archive.js` ページの追加
+4. `gatsby-node` と `gatsby-config` の変更
 
 ## 2023/10/24 layout.cssの調整
 

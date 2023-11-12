@@ -33,8 +33,34 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
         }
       }
+      allMarkdownRemark(filter: {frontmatter: {title: {ne: ""}}} sort: {frontmatter: {date: DESC}}) {
+        nodes {
+          frontmatter {
+            title
+            date(formatString: "YYYY年MM月DD日")
+            description
+            slug
+          }
+          id
+        }
+        totalCount
+      }
     }
   `)
+  // allMarkdownRemark(filter: {frontmatter: {title: {ne: ""}}} sort: {frontmatter: {date: DESC}}) {
+  //   nodes {
+  //     frontmatter {
+  //       title
+  //       date(formatString: "YYYY年MM月DD日")
+  //       description
+  //       slug
+  //     }
+  //     id
+  //   }
+  //   totalCount
+  // }
+
+
 
   if (blogresult.errors) {
     reporter.panicOnBuild(`GraphQL のクエリでエラーが発生しました`)
@@ -99,7 +125,21 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       })
     })
   })
+// }
+
+// 2023-11-12追加：archiveページの追加試作 start
+  blogresult.data.allMarkdownRemark.nodes.forEach((node) => {
+
+    createPage({
+      path: `/archive/post/${node.frontmatter.slug}/`,
+      component: path.resolve("./src/templates/archivepost-template.js"),
+      context: {
+        id: node.id
+      },
+    })
+  })
 }
+// 2023-11-12追加：archiveページの追加試作 end
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
