@@ -2,6 +2,14 @@
 
 [ドラヘイの生活](https://dorahei.com)
 
+## 2023/12/17 : Gatsby.jsとReactを最新にする
+
+Gatsby.js `^5.9.1` -> `^5.12.12`
+React `???` -> `^18.2.0`
+
+先ほど更新した通りにpackage.jsonを更新します。 破壊的変更によるコード修正にびびりながら。
+` npx npm-check-updates -u `
+
 ## 2023/11/12 : アーカイブページ導入検討、フォルダ内でMarkdownファイルを管理するブログ
 
 1. **GatsbyStarterBlog** の `content/blog` のフォルダをコピー
@@ -15,12 +23,13 @@
 
 ## 2023/06/18 GTAGの GTAG_TRACKING_ID 変更
 
-`G-LYEV5KR978` -> `GT-MK48CCL`
+~~~ Secret ~~~
 
 ## 2023/05/24 SNSのSHAREボタン追加
 
 1. `npm install --save react-share  --legacy-peer-deps` -> `npm audit fix` を実行
 2. cssの調整
+
 ## 2023/05/09 ギャラリーを追加してみる
 
 1. `gatsby-theme-gallery` を追加してみる。-> **失敗**
@@ -61,7 +70,7 @@ index.js,App.jsなどの上位のコンポートで下記を指定してイン�
 
 ### Galleryプラグインのインストールを試す
 
-`npm install --save @browniebroke/gatsby-image-gallery ` -> 失敗
+`npm install --save @browniebroke/gatsby-image-gallery` -> 失敗
 
 ![Gatsby.jsのビルドでWebpackのエラーが出たので対処した](https://note.com/sakay_y/n/n33a3915e1eda)
 
