@@ -34,8 +34,8 @@ const imgw = props.pageimgw || 1280
 const imgh = props.pageimgh || 640
 
 // 構造化データ用に公開日(datePublished)と更新日(dateModified)の値を設定する
-const pdate = props.pubdate || `2023-01-01T08:00:00+08:00`
-const mdate = props.moddate || `2023-01-02T09:20:00+08:00`
+const pdate = props.pubdate || `2024-01-01T08:00:00+08:00`
+const mdate = props.moddate || `2024-01-02T09:20:00+08:00`
 
 // 構造化データ用(変数使用)
 // const ldjson = `{
@@ -82,12 +82,12 @@ if (props.pagedepth === "3") {
       "@type": "ListItem",
       "position": 2,
       "name": "Pages",
-      "item": `${data.site.siteMetadata.siteUrl}/blog`
+      "item": `${data.site.siteMetadata.siteUrl}/${props.pagetype}`
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "BlogPost",
+      "name": "Post",
       "item": `${url}`
     }
   );

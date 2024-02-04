@@ -48,9 +48,11 @@ export const Head = ({data, location}) => (
       // pageimgw={data.contentfulBlogPost.eyecatch.file.details.image.width}
       // pageimgh={data.contentfulBlogPost.eyecatch.file.details.image.height}
       //サイトの構造化データに必要なパラメータを渡す
-      // pubdate={data.contentfulBlogPost.publishDate}
-      // moddate={data.contentfulBlogPost.updatedAt}
+      pubdate={data.markdownRemark.frontmatter.date}
+      moddate={data.markdownRemark.frontmatter.date}
       // パンくずリスト用にページの深さを設定する。homeが1 aboutは2 BlogPostが3
       pagedepth="3"
+      // blog または archive
+      pagetype="archive"
   />
 )

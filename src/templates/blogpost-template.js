@@ -212,5 +212,7 @@ export const Head = ({data, location}) => (
       moddate={data.contentfulBlogPost.updatedAt}
       // パンくずリスト用にページの深さを設定する。homeが1 aboutは2 BlogPostが3
       pagedepth="3"
+      // blog または archive
+      pagetype="blog"
   />
 )
