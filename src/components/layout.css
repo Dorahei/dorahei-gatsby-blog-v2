@@ -83,7 +83,7 @@ svg {
   display: flex;
   justify-content: center;
   list-style: none;
-  margin-top: 18px;
+  margin-top: 32px;
   color: #479454;
 }
 
@@ -93,13 +93,23 @@ svg {
 
 @media (min-width: 768px) {
   .nav ul {
-    margin-top: 0;
+    margin-top: 40px;
   }
   .header .container {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     height: 100px;
+  }
+}
+/* 2024/02/25 CSS追加 */
+@media (max-width: 568px) {
+  .nav ul {
+    flex-direction: column;
+    margin: 0px;
+  }
+  .nav li:not(:last-child) {
+    margin-right: 0px;
   }
 }
 
@@ -699,7 +709,8 @@ blockquote {
   box-sizing: border-box;
   font-style: italic;
   color: #464646;
-  border-left: solid 50px #30b458;
+  border-left: 4px solid #30b458;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14);
   border-radius: 0.5em;
   background: #dcffdc;
 }

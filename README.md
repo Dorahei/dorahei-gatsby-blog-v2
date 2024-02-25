@@ -2,6 +2,21 @@
 
 [ドラヘイの生活](https://dorahei.com)
 
+## 2024/02/25 : CSSの追加、navバーの変更
+
+```
+@media (max-width: 568px) {
+  .nav ul {
+    flex-direction: column;
+    margin: 0px;
+  }
+  .nav li:not(:last-child) {
+    margin-right: 0px;
+  }
+}
+```
+
+
 ## 2023/12/17 : Gatsby.jsとReactを最新にする
 
 Gatsby.js `^5.9.1` -> `^5.12.12`
@@ -23,7 +38,7 @@ React `???` -> `^18.2.0`
 
 ## 2023/06/18 GTAGの GTAG_TRACKING_ID 変更
 
-~~~ Secret ~~~
+***Secret***
 
 ## 2023/05/24 SNSのSHAREボタン追加
 

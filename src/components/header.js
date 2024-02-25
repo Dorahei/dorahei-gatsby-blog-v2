@@ -47,13 +47,13 @@ const Header = () => (
             <Link to={`/about/`}>ABOUT</Link>
           </li>
           <li>
+            <Link to={`/other/`}>OTHER</Link>
+          </li>
+          <li>
             <Link to={`/blog/`}>BLOG</Link>
           </li>
           <li>
             <Link to={`/archive/`}>ARCHIVE</Link>
-          </li>
-          <li>
-            <Link to={`/other/`}>OTHER</Link>
           </li>
         </ul>
       </nav>
