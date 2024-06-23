@@ -102,11 +102,14 @@ svg {
     height: 100px;
   }
 }
-/* 2024/02/25 CSS追加 */
+/* 2024/02/25 CSS追加 2024/06/23 CSS調整*/
 @media (max-width: 568px) {
   .nav ul {
     flex-direction: column;
     margin: 0px;
+  }
+  .nav li {
+    padding: 5px;
   }
   .nav li:not(:last-child) {
     margin-right: 0px;

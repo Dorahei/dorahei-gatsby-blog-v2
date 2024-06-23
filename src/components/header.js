@@ -40,9 +40,9 @@ const Header = () => (
       </div>
       <nav className="nav">
         <ul>
-          <li>
+          {/* <li>
             <Link to={`/`}>TOP</Link>
-          </li>
+          </li> */}
           <li>
             <Link to={`/about/`}>ABOUT</Link>
           </li>

@@ -2,9 +2,36 @@
 
 [ドラヘイの生活](https://dorahei.com)
 
+## 2024/06/23 : CSS調整、2024/02/25の調整
+
+```css
+@media (max-width: 568px) {
+  .nav ul {
+    flex-direction: column;
+    margin: 0px;
+  }
+  // 2024/06/23 追加部分
+  .nav li {
+    padding: 5px;
+  }
+  .nav li:not(:last-child) {
+    margin-right: 0px;
+  }
+}
+```
+
+## 2024/05/03 : heder.jsの変更
+メニューバーからTOPの部分をコメントアウト
+
+```javascript
+          {/* <li>
+            <Link to={`/`}>TOP</Link>
+          </li> */}
+```
+
 ## 2024/02/25 : CSSの追加、navバーの変更
 
-```
+```css
 @media (max-width: 568px) {
   .nav ul {
     flex-direction: column;
