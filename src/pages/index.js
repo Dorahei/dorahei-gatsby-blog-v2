@@ -95,13 +95,13 @@ const Home = ({ data }) => (
     {/* ブログセクション */}
     <section className="photo">
       <h2 className="sr-only">BLOG</h2>
-      <figure>
+      {/* <figure>
         <GatsbyImage
           image={data.blog.childImageSharp.gatsbyImageData}
           alt="banner"
           style={{ height: "100%" }}
         />
-      </figure>
+      </figure> */}
     </section>
     <section className="food">
       <div className="container">
@@ -127,13 +127,13 @@ const Home = ({ data }) => (
     {/* ギャラリーセクション */}
     <section className="photo">
       <h2 className="sr-only">Gallery</h2>
-      <figure>
+      {/* <figure>
         <GatsbyImage
           image={data.gallery.childImageSharp.gatsbyImageData}
           alt="banner"
           style={{ height: "100%" }}
         />
-      </figure>
+      </figure> */}
     </section>
     <section className="food">
       <div className="container">

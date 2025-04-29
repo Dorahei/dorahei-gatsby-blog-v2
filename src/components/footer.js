@@ -5,7 +5,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faTwitter,
-  faFacebookSquare,
+  // faFacebookSquare,
   faInstagram,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons"
@@ -56,12 +56,12 @@ const Footer = () => {
               <span className="sr-only">Twitter</span>
             </a>
           </li>
-          <li>
+          {/* <li>
             <a href="https://facebook.com/RYUHEITORIYAMA/">
               <FontAwesomeIcon icon={faFacebookSquare} />
               <span className="sr-only">Facebook</span>
             </a>
-          </li>
+          </li> */}
           <li>
             <a href="http://instagram.com/Dorahei_Smile/">
               <FontAwesomeIcon icon={faInstagram} />

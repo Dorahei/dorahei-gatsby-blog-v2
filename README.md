@@ -2,6 +2,28 @@
 
 [ドラヘイの生活](https://dorahei.com)
 
+## 2025/04/29 gallery.jsの改修
+`yet-another-react-lightbox`をインストール。（`simple-react-lightbox`を不使用）
+
+## 2025/04/29 footer.jsのfacebookをコメントアウトする
+```js
+          {/* <li>
+            <a href="https://facebook.com/RYUHEITORIYAMA/">
+              <FontAwesomeIcon icon={faFacebookSquare} />
+              <span className="sr-only">Facebook</span>
+            </a>
+          </li> */}
+```
+
+## 2025/03/13 : reactのバージョンを18にする
+
+```json
+"dependencies": {
+  "react": "^18.0.0",
+  "react-dom": "^18.0.0"
+}
+```
+
 ## 2024/06/23 : CSS調整、2024/02/25の調整
 
 ```css
